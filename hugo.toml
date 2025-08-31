@@ -1,0 +1,47 @@
+baseURL = "https://example.com"
+languageCode = "zh-cn"
+title = "我的博客"
+theme = "dead-simple"
+
+[params]
+  description = "一个简洁的个人博客"
+  author = "博主姓名"
+  # noSearch = false  # 启用搜索功能
+  # date_format = "2006-01-02"
+
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+  
+  [[menu.main]]
+    name = "文章"
+    url = "/posts/"
+    weight = 2
+    
+  [[menu.main]]
+    name = "标签"
+    url = "/tags/"
+    weight = 3
+    
+  [[menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 4
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github"
+    lineNos = true
+    lineNumbersInTable = false
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
